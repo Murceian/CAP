@@ -1,0 +1,75 @@
+:root {
+  font-family: "Trebuchet MS", "Segoe UI", Tahoma, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #e2e8f0;
+  background-color: #0d1117;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --paper: #0d1117;
+  --paper-card: #151b23;
+  --ink: #e2e8f0;
+  --muted: #7c8a97;
+  --line: rgba(226, 232, 240, 0.1);
+  --line-soft: rgba(226, 232, 240, 0.05);
+  --chip: rgba(226, 232, 240, 0.07);
+  --accent: #58a6ff;
+  --accent-2: #c75c5c;
+  --shadow-1: 0 18px 40px rgba(0, 0, 0, 0.6);
+  --shadow-2: 0 8px 20px rgba(0, 0, 0, 0.4);
+  --display-font: "Palatino Linotype", "Book Antiqua", Georgia, serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    linear-gradient(170deg, #4a5c6b 0%, #1c2b3a 30%, #0d1117 65%, #080b0f 100%);
+  background-attachment: fixed;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: radial-gradient(
+    circle,
+    rgba(226, 232, 240, 0.03) 1px,
+    transparent 1px
+  );
+  background-size: 32px 32px;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid rgba(88, 166, 255, 0.45);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: rgba(88, 166, 255, 0.3);
+}

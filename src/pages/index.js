@@ -1,0 +1,11 @@
+export { default as Home } from "./Home.jsx";
+export { default as Login } from "./Login.jsx";
+export { default as Register } from "./Register.jsx";
+export { default as Shop } from "./Shop.jsx";
+export { default as ProductDetail } from "./ProductDetail.jsx";
+export { default as Services } from "./Services.jsx";
+export { default as ServiceDetail } from "./ServiceDetail.jsx";
+export { default as Portfolio } from "./Portfolio.jsx";
+export { default as PortfolioDetail } from "./PortfolioDetail.jsx";
+export { default as Messaging } from "./Messaging.jsx";
+export { default as Cart } from "./Cart.jsx";
