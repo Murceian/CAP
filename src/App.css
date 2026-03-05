@@ -1367,3 +1367,839 @@ a.card {
 }
 
 .nav-admin:hover { opacity: 1; }
+
+/* ── Checkout page ──────────────────────────────────────── */
+.checkout-page {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.checkout-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 32px;
+}
+
+@media (max-width: 700px) {
+  .checkout-layout { grid-template-columns: 1fr; }
+}
+
+.checkout-section-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 0 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkout-stripe-badge {
+  background: rgba(99, 179, 229, 0.12);
+  border: 1px solid rgba(99, 179, 229, 0.3);
+  border-radius: 20px;
+  color: var(--accent-3);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 2px 8px;
+  text-transform: none;
+}
+
+.checkout-summary {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 28px;
+  height: fit-content;
+}
+
+.checkout-list {
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.checkout-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.checkout-item-swatch {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.checkout-item-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.checkout-item-title { font-size: 0.9rem; font-weight: 600; }
+.checkout-item-sub   { font-size: 0.78rem; color: var(--text-muted); }
+.checkout-item-qty   { font-size: 0.85rem; color: var(--text-muted); }
+.checkout-item-price { font-size: 0.9rem; font-weight: 600; }
+
+.checkout-total {
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  font-weight: 700;
+  padding-top: 16px;
+}
+
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.checkout-card-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.checkout-card-input { letter-spacing: 0.1em; }
+
+.checkout-note {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin: 0;
+}
+
+/* ── Order confirmation ─────────────────────────────────── */
+.confirm-page {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+.confirm-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  max-width: 480px;
+  padding: 48px 40px;
+  text-align: center;
+  width: 100%;
+}
+
+.confirm-icon {
+  background: rgba(104, 211, 145, 0.15);
+  border: 2px solid rgba(104, 211, 145, 0.4);
+  border-radius: 50%;
+  color: #68d391;
+  font-size: 1.6rem;
+  height: 64px;
+  line-height: 60px;
+  margin: 0 auto 24px;
+  width: 64px;
+}
+
+.confirm-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+
+.confirm-order-id {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin: 0 0 12px;
+}
+
+.confirm-sub {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0 0 28px;
+}
+
+.confirm-items {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 16px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+}
+
+.confirm-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.confirm-item-swatch {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.confirm-item-title { flex: 1; font-size: 0.88rem; font-weight: 600; }
+.confirm-item-qty   { font-size: 0.82rem; color: var(--text-muted); }
+.confirm-item-price { font-size: 0.88rem; font-weight: 600; }
+
+.confirm-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 28px;
+}
+
+.confirm-total span { color: var(--accent-1); }
+
+.confirm-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.about-photo {
+  width: 280px;        /* change this to whatever size you want */
+  height: 280px;       /* keep equal to width for a square */
+  border-radius: 12px;
+  overflow: hidden;    /* clips the image to the box */
+  flex-shrink: 0; 
+  object-position: 30% 30%;     /* stops it squishing in flex layouts */
+}
+
+.about-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* ============================================================
+   BOOKING FLOW
+   ============================================================ */
+
+/* Accent text helpers (mirror card accent colours) */
+.accent-text.accent-peach    { color: var(--accent-1); }
+.accent-text.accent-mint     { color: #6eddc8; }
+.accent-text.accent-sky      { color: #7ec8e3; }
+.accent-text.accent-amber    { color: #f5b942; }
+.accent-text.accent-lavender { color: #b48fde; }
+
+/* ── Tier selected state ──────────────────────────────────── */
+.tier-cta-active {
+  background: var(--accent-1) !important;
+  color: var(--bg) !important;
+  border-color: var(--accent-1) !important;
+  opacity: 1 !important;
+}
+
+/* ── Booking form wrapper (inside ServiceDetail) ──────────── */
+.booking-form-wrapper {
+  margin-top: 48px;
+  scroll-margin-top: 80px;
+}
+
+/* ── Panel card ───────────────────────────────────────────── */
+.booking-form-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px;
+  max-width: 680px;
+  animation: fadeSlideUp 0.25s ease;
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.booking-form-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.booking-form-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.booking-form-price {
+  font-weight: 400;
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.booking-form-close {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 4px 10px;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  flex-shrink: 0;
+  transition: color 0.15s, border-color 0.15s;
+}
+.booking-form-close:hover { color: var(--text); border-color: var(--text-muted); }
+
+/* ── Form fields ──────────────────────────────────────────── */
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.booking-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.booking-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.booking-required {
+  color: var(--accent-1);
+}
+
+.booking-input {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 0.95rem;
+  padding: 10px 12px;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: inherit;
+  resize: vertical;
+}
+.booking-input:focus {
+  outline: none;
+  border-color: var(--accent-1);
+  box-shadow: 0 0 0 3px rgba(255, 120, 80, 0.15);
+}
+.booking-input::placeholder { color: var(--text-muted); opacity: 0.7; }
+
+/* ── Form actions ─────────────────────────────────────────── */
+.booking-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+/* ── Booking summary (inside checkout sidebar) ───────────── */
+.booking-summary-service {
+  margin-bottom: 12px;
+}
+.booking-summary-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+.booking-summary-tier {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.booking-summary-features {
+  margin: 0 0 20px;
+  padding-left: 20px;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  list-style: disc;
+}
+
+/* ── Project details collapsible ─────────────────────────── */
+.booking-data-summary {
+  margin-top: 16px;
+  border-top: 1px solid var(--border);
+  padding-top: 14px;
+}
+.booking-data-summary summary {
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 4px 0;
+  list-style: none;
+}
+.booking-data-summary summary::marker,
+.booking-data-summary summary::-webkit-details-marker { display: none; }
+.booking-data-summary summary::before { content: "▸ "; }
+.booking-data-summary[open] summary::before { content: "▾ "; }
+
+.booking-data-list {
+  margin: 10px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.booking-data-row {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 8px;
+  font-size: 0.8rem;
+}
+.booking-data-row dt {
+  color: var(--text-muted);
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.booking-data-row dd {
+  color: var(--text);
+  margin: 0;
+  word-break: break-word;
+}
+
+/* ── Auth notice ──────────────────────────────────────────── */
+.booking-auth-notice {
+  background: color-mix(in srgb, var(--accent-1) 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent-1) 30%, transparent);
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+.booking-auth-notice a { color: var(--accent-1); }
+
+/* ── Secure note ──────────────────────────────────────────── */
+.checkout-secure-note {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 8px;
+}
+
+/* ── Booking confirmation details ────────────────────────── */
+.booking-confirm-details {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin: 20px 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: left;
+  width: 100%;
+  box-sizing: border-box;
+}
+.booking-confirm-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 0.9rem;
+}
+.confirm-ref {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+.confirm-ref-id {
+  color: var(--accent-1);
+  font-family: monospace;
+}
+
+/* ============================================================
+   ADMIN DASHBOARD
+   ============================================================ */
+
+/* ── Layout ───────────────────────────────────────────────── */
+.admin-layout {
+  display: flex;
+  min-height: calc(100vh - 56px);
+  align-items: flex-start;
+}
+
+.admin-sidebar {
+  width: 200px;
+  flex-shrink: 0;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  padding: 28px 0;
+  position: sticky;
+  top: 56px;
+  min-height: calc(100vh - 56px);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.admin-sidebar-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 0 20px 12px;
+  margin: 0;
+}
+
+.admin-nav-link {
+  display: block;
+  padding: 9px 20px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  border-left: 3px solid transparent;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.admin-nav-link:hover {
+  color: var(--text);
+  background: color-mix(in srgb, var(--accent-1) 6%, transparent);
+}
+.admin-nav-link-active {
+  color: var(--text);
+  border-left-color: var(--accent-1);
+  background: color-mix(in srgb, var(--accent-1) 10%, transparent);
+  font-weight: 600;
+}
+
+.admin-content {
+  flex: 1;
+  min-width: 0;
+  padding: 32px 40px;
+}
+
+/* ── Page chrome ──────────────────────────────────────────── */
+.admin-page { max-width: 1100px; }
+
+.admin-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.admin-heading {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--text);
+  margin: 0 0 24px;
+}
+.admin-page-header .admin-heading { margin: 0; }
+
+.admin-subheading {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 36px 0 14px;
+}
+
+.admin-count {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* ── Stat grid ────────────────────────────────────────────── */
+.admin-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.admin-stat-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px 22px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.admin-stat-wide { grid-column: span 2; }
+
+.admin-stat-value {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1;
+}
+
+.admin-stat-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.admin-stat-label a { color: var(--text-muted); text-decoration: none; }
+.admin-stat-label a:hover { color: var(--accent-1); }
+
+/* ── Table ────────────────────────────────────────────────── */
+.admin-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+.admin-table th {
+  text-align: left;
+  padding: 12px 16px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  white-space: nowrap;
+}
+.admin-table td {
+  padding: 13px 16px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  vertical-align: middle;
+}
+.admin-table tr:last-child td { border-bottom: none; }
+.admin-table tbody tr:hover { background: color-mix(in srgb, var(--accent-1) 4%, transparent); }
+
+.admin-row-self { background: color-mix(in srgb, var(--accent-1) 5%, transparent) !important; }
+
+.admin-id        { color: var(--text-muted); font-family: monospace; font-size: 0.82rem; }
+.admin-muted     { color: var(--text-muted); font-size: 0.82rem; }
+.admin-empty     { text-align: center; color: var(--text-muted); padding: 32px 0 !important; }
+.admin-stripe    { font-family: monospace; font-size: 0.75rem; max-width: 160px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.admin-tier-cap  { text-transform: capitalize; }
+.admin-you-badge { font-size: 0.75rem; color: var(--accent-1); font-weight: 600; }
+
+/* ── Action column buttons ────────────────────────────────── */
+.admin-actions { white-space: nowrap; display: flex; gap: 6px; }
+
+.admin-btn-edit,
+.admin-btn-del {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: transparent;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.admin-btn-edit { color: var(--text-muted); }
+.admin-btn-edit:hover { color: var(--text); border-color: var(--text-muted); }
+.admin-btn-del  { color: #e05c5c; border-color: #e05c5c44; }
+.admin-btn-del:hover { background: #e05c5c18; }
+
+/* ── Status + role select ─────────────────────────────────── */
+.admin-status-select,
+.admin-role-select {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-family: inherit;
+}
+.admin-status-select:focus,
+.admin-role-select:focus {
+  outline: none;
+  border-color: var(--accent-1);
+}
+
+/* Status colour tints */
+.status-bg-pending   { border-color: #f5b942; color: #f5b942; }
+.status-bg-paid      { border-color: #6eddc8; color: #6eddc8; }
+.status-bg-shipped   { border-color: #7ec8e3; color: #7ec8e3; }
+.status-bg-fulfilled { border-color: #78d891; color: #78d891; }
+.status-bg-cancelled { border-color: #e05c5c; color: #e05c5c; }
+.status-bg-confirmed { border-color: #6eddc8; color: #6eddc8; }
+.status-bg-completed { border-color: #78d891; color: #78d891; }
+
+/* Role colour tints */
+.role-bg-admin     { border-color: var(--accent-1); color: var(--accent-1); }
+.role-bg-moderator { border-color: #b48fde; color: #b48fde; }
+.role-bg-user      { border-color: var(--border); }
+
+/* Status badges (dashboard only) */
+.admin-status {
+  display: inline-block;
+  border-radius: 6px;
+  padding: 2px 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+.status-pending   { background: #f5b94222; color: #f5b942; }
+.status-paid      { background: #6eddc822; color: #6eddc8; }
+.status-shipped   { background: #7ec8e322; color: #7ec8e3; }
+.status-fulfilled { background: #78d89122; color: #78d891; }
+.status-cancelled { background: #e05c5c22; color: #e05c5c; }
+
+/* ── Accent dot (products/services accent column) ─────────── */
+.accent-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+.accent-dot-peach    { background: var(--accent-1); }
+.accent-dot-mint     { background: #6eddc8; }
+.accent-dot-sky      { background: #7ec8e3; }
+.accent-dot-amber    { background: #f5b942; }
+.accent-dot-lavender { background: #b48fde; }
+
+/* ── Modal overlay ────────────────────────────────────────── */
+.admin-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 24px;
+}
+
+.admin-modal {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px;
+  width: 100%;
+  max-width: 480px;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: fadeSlideUp 0.2s ease;
+}
+.admin-modal-wide { max-width: 640px; }
+
+.admin-modal-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 22px;
+}
+
+/* ── Modal form ───────────────────────────────────────────── */
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.admin-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.admin-field label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.admin-field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.admin-json-area {
+  font-family: monospace;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+.input-error { border-color: #e05c5c !important; }
+.admin-field-error {
+  font-size: 0.78rem;
+  color: #e05c5c;
+  margin: 2px 0 0;
+}
+
+.admin-modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 6px;
+}
+
+/* ── Notes expansion row (bookings) ──────────────────────── */
+.admin-notes-row td { padding: 0 !important; }
+.admin-notes-panel {
+  background: color-mix(in srgb, var(--accent-1) 5%, var(--surface));
+  border-top: 1px dashed var(--border);
+  padding: 16px 24px;
+  font-size: 0.83rem;
+}
+.admin-notes-panel strong {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .admin-sidebar {
+    width: 100%;
+    min-height: unset;
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 12px 8px;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+  .admin-sidebar-title { display: none; }
+  .admin-layout { flex-direction: column; }
+  .admin-content { padding: 20px 16px; }
+  .admin-stat-wide { grid-column: span 1; }
+  .admin-field-row { grid-template-columns: 1fr; }
+}

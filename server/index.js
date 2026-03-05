@@ -9,6 +9,7 @@ const authRouter = require("./routes/auth");
 const ordersRouter = require("./routes/orders");
 const bookingsRouter = require("./routes/bookings");
 const messagesRouter = require("./routes/messages");
+const adminRouter = require("./routes/admin");
 
 const app = express();
 
@@ -48,6 +49,7 @@ app.use("/api/auth", authRouter);
 app.use("/api/orders", ordersRouter);
 app.use("/api/bookings", bookingsRouter);
 app.use("/api/messages", messagesRouter);
+app.use("/api/admin", adminRouter);
 
 // ── 404 ─────────────────────────────────────────────────
 app.use((_req, res) => {

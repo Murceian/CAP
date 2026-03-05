@@ -15,4 +15,13 @@ function verifyToken(req, res, next) {
   }
 }
 
-module.exports = { verifyToken };
+function verifyAdmin(req, res, next) {
+  verifyToken(req, res, () => {
+    if (req.user?.role !== "admin") {
+      return res.status(403).json({ message: "Admin access required" });
+    }
+    next();
+  });
+}
+
+module.exports = { verifyToken, verifyAdmin };

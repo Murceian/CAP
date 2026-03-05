@@ -1,8 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 
 function Cart() {
   const { items, removeItem, clearCart, itemCount } = useCart();
+  const navigate = useNavigate();
 
   const total = items.reduce((sum, item) => {
     const price =
@@ -75,7 +76,7 @@ function Cart() {
           <button className="cta ghost" onClick={clearCart}>
             Clear cart
           </button>
-          <button className="cta" disabled title="Available in Phase 6">
+          <button className="cta" onClick={() => navigate("/checkout")}>
             Checkout
           </button>
         </div>

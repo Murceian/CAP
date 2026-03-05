@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
+import aboutPhoto from '../assets/CasualPortrait.jpg';
 
 const socialLinks = [
-  { label: "Instagram", href: "https://instagram.com" },
-  { label: "Twitter / X", href: "https://x.com" },
-  { label: "GitHub", href: "https://github.com" },
-  { label: "LinkedIn", href: "https://linkedin.com" },
+  { label: "Instagram", href: "https://www.instagram.com/almercer26/" },
+  { label: "Spotify", href: "https://open.spotify.com/artist/1xDxw74A8FXH9UHJax611z" },
+  { label: "GitHub", href: "https://github.com/Murceian" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/aiden-mercer-44199021a/" },
 ];
 
 const ctaCards = [
@@ -40,8 +41,7 @@ function Home() {
             MVP for Capstone Store
           </h1>
           <p className="home-tagline">
-            A one-person studio making brand identities, building web experiences,
-            and selling digital tools — all in one place.
+            My attempt at a one stop shop for everything that I want to build. A portfolio, an ecommerce store, a messaging system, and more. Built with React, Express, and MySQL.
           </p>
           <div className="home-hero-actions">
             <Link className="cta" to="/shop">Browse the shop</Link>
@@ -49,8 +49,8 @@ function Home() {
           </div>
         </div>
         <div className="home-hero-visual">
-          <div className="photo-placeholder">
-            <span className="photo-placeholder-label">Photo</span>
+          <div className="about-photo">
+            <img src={aboutPhoto} alt="About" className="about-photo" />
           </div>
         </div>
       </section>

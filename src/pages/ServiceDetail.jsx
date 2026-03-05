@@ -1,12 +1,21 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useParams } from "react-router-dom";
 import { apiClient } from "../utils";
+import BookingFormPanel from "../components/BookingFormPanel";
 
 function ServiceDetail() {
   const { id } = useParams();
   const [service, setService] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [selectedTier, setSelectedTier] = useState(null);
+  const formRef = useRef(null);
+
+  function handleSelectTier(tier) {
+    setSelectedTier(tier);
+    // Small delay lets the panel render before scrolling
+    setTimeout(() => formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }), 60);
+  }
 
   useEffect(() => {
     apiClient
@@ -97,13 +106,33 @@ function ServiceDetail() {
                       <li key={f}>{f}</li>
                     ))}
                   </ul>
-                  <button className={`cta${key === "standard" ? "" : " ghost"} tier-cta`}>
-                    Book {tier.name}
+                  <button
+                    className={`cta${key === "standard" ? "" : " ghost"} tier-cta${
+                      selectedTier?.name === tier.name ? " tier-cta-active" : ""
+                    }`}
+                    onClick={() =>
+                      selectedTier?.name === tier.name
+                        ? setSelectedTier(null)
+                        : handleSelectTier(tier)
+                    }
+                  >
+                    {selectedTier?.name === tier.name ? "Selected ✓" : `Book ${tier.name}`}
                   </button>
                 </div>
               );
             })}
           </div>
+        </div>
+      )}
+
+      {/* ── Booking form panel ─────────────────────────── */}
+      {selectedTier && (
+        <div ref={formRef} className="booking-form-wrapper">
+          <BookingFormPanel
+            service={service}
+            tier={selectedTier}
+            onCancel={() => setSelectedTier(null)}
+          />
         </div>
       )}
     </section>
